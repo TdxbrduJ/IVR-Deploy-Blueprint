@@ -10,9 +10,14 @@ provider "genesyscloud" {
   sdk_debug = true
 }
 
+data "genesyscloud_user" "TJ Mouslmani"{
+name = "TJ Mouslmani"
+email = "tj.mouslmani@genesys.com"
+}
+
 resource "genesyscloud_user" "sf_johnsmith" {
-  email           = "john.smith@simplefinancial.com"
-  name            = "John Smith"
+  email           = "john.smithyy@simplefinancial.com"
+  name            = "Manny Mans"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -59,7 +64,7 @@ resource "genesyscloud_user" "sf_janesmith" {
 }
 
 resource "genesyscloud_routing_queue" "queue_ira" {
-  name                     = "Simple Financial IRA queue"
+  name                     = "Simple Financial IRA queue TJ Yay"
   description              = "Simple Financial IRA questions and answers"
   acw_wrapup_prompt        = "MANDATORY_TIMEOUT"
   acw_timeout_ms           = 300000
@@ -83,6 +88,7 @@ resource "genesyscloud_routing_queue" "queue_K401" {
   auto_answer_only         = true
   enable_transcription     = true
   enable_manual_assignment = true
+  
   members {
     user_id  = genesyscloud_user.sf_johnsmith.id
     ring_num = 1
@@ -95,20 +101,20 @@ resource "genesyscloud_routing_queue" "queue_K401" {
 }
 
 resource "genesyscloud_flow" "mysimpleflow" {
-  filepath = "./SimpleFinancialIvr_v2-0.yaml"
-  file_content_hash = filesha256("./SimpleFinancialIvr_v2-0.yaml") 
+  filepath = "./Simple-Financial-IRA-queue-TJ-Yay_v2-0.yaml"
+  file_content_hash = filesha256("./Simple-Financial-IRA-queue-TJ-Yay_v2-0.yaml") 
 }
 
 
 resource "genesyscloud_telephony_providers_edges_did_pool" "mygcv_number" {
   start_phone_number = "+19205422729"
   end_phone_number   = "+19205422729"
-  description        = "GCV Number for inbound calls"
+  description        = "testing for the GCV Number for inbound calls"
   comments           = "Additional comments"
 }
 
 resource "genesyscloud_architect_ivr" "mysimple_ivr" {
-  name               = "A simple IVR"
+  name               = "A simple IVR TJ or mat"
   description        = "A sample IVR configuration"
   dnis               = ["+19205422729", "+19205422729"]
   open_hours_flow_id = genesyscloud_flow.mysimpleflow.id
