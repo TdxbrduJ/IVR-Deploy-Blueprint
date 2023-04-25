@@ -39,7 +39,7 @@ resource "genesyscloud_user" "sf_johnsmith" {
   }
 }
 
-resource "genesyscloud_user" "jessica_martin" {
+resource "genesyscloud_user" "sf_janesmith" {
   email           = "jess.martin@simplefinancial.com"
   name            = "Jess Martin"
   password        = "b@Zinga1972"
