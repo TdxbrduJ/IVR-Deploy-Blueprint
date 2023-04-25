@@ -39,9 +39,9 @@ resource "genesyscloud_user" "sf_johnsmith" {
   }
 }
 
-resource "genesyscloud_user" "sf_janesmith" {
-  email           = "jane.smith@simplefinancial.com"
-  name            = "Jane Smith"
+resource "genesyscloud_user" "jessica_martin" {
+  email           = "jess.martin@simplefinancial.com"
+  name            = "Jess Martin"
   password        = "b@Zinga1972"
   state           = "active"
   department      = "IRA"
@@ -122,9 +122,4 @@ resource "genesyscloud_architect_ivr" "mysimple_ivr" {
     genesyscloud_flow.mysimpleflow,
     genesyscloud_telephony_providers_edges_did_pool.mygcv_number
   ]
-}
-
-variable "my_ivr_did_number" {
-  type = string
-  description = "phone number for my IVR"
 }
