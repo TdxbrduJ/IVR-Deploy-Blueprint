@@ -74,7 +74,7 @@ resource "genesyscloud_routing_queue" "queue_ira" {
   enable_manual_assignment = true
 
   members {
-    user_id  = genesyscloud_user.sf_janesmith
+    user_id  = genesyscloud_user.sf_janesmith.id
     ring_num = 1
   }
 }
