@@ -124,3 +124,7 @@ resource "genesyscloud_architect_ivr" "mysimple_ivr" {
   ]
 }
 
+variable "my_ivr_did_number" {
+  type = string
+  description = "phone number for my IVR"
+}
