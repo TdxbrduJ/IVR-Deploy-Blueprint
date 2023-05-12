@@ -10,7 +10,7 @@ inboundCall:
         noValue: true
       textToSpeech:
         defaultEngine:
-          voice: Kimberly
+          voice: Jill
   initialGreeting:
     tts: Hi welcome to SimpleFinancial.  Please listen to our menu carefully.
   settingsActionDefaults:
